@@ -3,7 +3,7 @@
 ~/.bashrc で実行するコードを記述する
 
  # ~/.bashrc
- . path/to/mybashrc.sh
+ . path/to/mybashrc/main.sh
 
 
 == 設定
