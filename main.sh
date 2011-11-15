@@ -232,10 +232,7 @@ mybashrc(){
 	mybashrc_main
 }
 mybashrc_load_file(){
-	local file; file=$1; shift
-	if [ -f "$file" ]; then
-		. $file
-	fi
+	[ -f "$1" ] && . $1
 }
 
 mybashrc
