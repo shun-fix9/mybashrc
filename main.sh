@@ -147,7 +147,8 @@ mybashrc_prompt_command(){
 
 	local disabled; mybashrc_disable_change_window_title
 	if [ -z "$disabled" ]; then
-		if [ "$TERM" = "screen" ]; then
+		# screen or screen-256color
+		if [ "${TERM:0:6}" = "screen" ]; then
 			echo -ne "\ek${WINDOW_TITLE}\e\\"
 		else
 			echo -ne "\e]0;${WINDOW_TITLE}\007"
