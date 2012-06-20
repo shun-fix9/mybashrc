@@ -49,6 +49,7 @@ mybashrc_alias(){
 	alias lA='ls -al'
 
 	alias grep='grep --color=auto'
+	alias gst='git sst'
 }
 mybashrc_rvm(){
 	local rvm_script_path; mybashrc_rvm_script_path
