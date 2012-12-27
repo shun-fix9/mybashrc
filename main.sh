@@ -9,8 +9,6 @@ mybashrc_main(){
 
 	mybashrc_alias
 
-	mybashrc_rvm
-
 	mybashrc_prompt
 
 	mybashrc_local
@@ -51,12 +49,6 @@ mybashrc_alias(){
 	alias grep='grep --color=auto'
 	alias s='git sst'
 }
-mybashrc_rvm(){
-	local rvm_script_path; mybashrc_rvm_script_path
-	if [ -f "$rvm_script_path" ]; then
-		. "$rvm_script_path"
-	fi
-}
 mybashrc_prompt(){
 	mybashrc_prompt_color_names
 
@@ -73,9 +65,6 @@ mybashrc_is_product() {
 }
 mybashrc_project_root_dir_list() {
 	: # project_root_dir_list=( project/root/dir )
-}
-mybashrc_rvm_script_path() {
-	rvm_script_path=/usr/local/rvm/scripts/rvm
 }
 mybashrc_prompt_format(){
 	PROMPT_COLOR=32
