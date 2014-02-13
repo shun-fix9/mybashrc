@@ -47,7 +47,7 @@ mybashrc_alias(){
 	alias lA='ls -al'
 
 	alias grep='grep --color=auto'
-	alias s='git sst'
+	alias s='git br && git st && git stash list'
 }
 mybashrc_prompt(){
 	mybashrc_prompt_color_names
