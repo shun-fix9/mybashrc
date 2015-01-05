@@ -3,6 +3,8 @@ mybashrc_main(){
 	mybashrc_path
 	mybashrc_history_options
 	mybashrc_editor
+	mybashrc_completion
+	mybashrc_ruby
 
 	mybashrc_checkwinsize
 	mybashrc_lesspipe
@@ -24,16 +26,22 @@ mybashrc_history_options(){
 	export HISTCONTROL=ignoreboth
 }
 mybashrc_checkwinsize(){
-	# check the window size after each command and, if necessary,
-	# update the values of LINES and COLUMNS.
 	shopt -s checkwinsize
 }
 mybashrc_editor(){
 	export EDITOR=vim
 	export SVN_EDITOR=vim
 }
+mybashrc_completion(){
+	mybashrc_load_file /etc/bash_completion
+}
+mybashrc_ruby(){
+	if [ -f $HOME/.rbenv ]; then
+		export PATH="$HOME/.rbenv/bin:$PATH"
+		eval "$(rbenv init -)"
+	fi
+}
 mybashrc_lesspipe(){
-	# make less more friendly for non-text input files, see lesspipe(1)
 	[ -x /usr/bin/lesspipe ] && eval "$(lesspipe)"
 }
 mybashrc_alias(){
@@ -48,6 +56,9 @@ mybashrc_alias(){
 
 	alias grep='grep --color=auto'
 	alias s='git br && git st && git stash list'
+
+	alias b='bundle exec'
+	alias p=connect-to-host
 }
 mybashrc_prompt(){
 	mybashrc_prompt_color_names
@@ -218,7 +229,6 @@ mybashrc(){
 	mybashrc_load_file /etc/bashrc
 
 	mybashrc_load_file ~/.mybashrc
-	mybashrc_load_file ~/.mybashrc.d/`hostname`
 
 	mybashrc_main
 }
