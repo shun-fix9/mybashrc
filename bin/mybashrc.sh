@@ -19,7 +19,13 @@ mybashrc_umask(){
 	umask 002
 }
 mybashrc_path(){
-	export PATH=$PATH:$HOME/bin
+	PATH=$PATH:$HOME/bin
+	if [ -d $HOME/development-environment/vendor/plugin ]; then
+		for mybashrc_development_environment_plugin_path in $HOME/development-environment/vendor/plugin/*; do
+			PATH=$PATH:$mybashrc_development_environment_plugin_path
+		done
+	fi
+	export PATH=$PATH
 }
 mybashrc_history_options(){
 	export HISTCONTROL=ignoredups
