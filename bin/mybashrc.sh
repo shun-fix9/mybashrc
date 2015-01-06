@@ -62,7 +62,7 @@ mybashrc_alias(){
 	alias lA='ls -al'
 
 	alias grep='grep --color=auto'
-	alias s='git branch && git status && git stash list && [ -x $(git rev-parse --show-toplevel)/.git-status.sh ] && $(git rev-parse --show-toplevel)/.git-status.sh'
+	alias s='git all-status'
 
 	alias b='bundle exec'
 	alias p=connect-to-host
