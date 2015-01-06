@@ -43,7 +43,7 @@ mybashrc_completion(){
 	mybashrc_load_file /etc/bash_completion
 }
 mybashrc_ruby(){
-	if [ -f $HOME/.rbenv ]; then
+	if [ -d $HOME/.rbenv ]; then
 		export PATH="$HOME/.rbenv/bin:$PATH"
 		eval "$(rbenv init -)"
 	fi
