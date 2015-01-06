@@ -1,3 +1,10 @@
+mybashrc(){
+	[ -z "$PS1" ] && return
+
+	mybashrc_load_file /etc/bashrc
+	mybashrc_load_file ~/.mybashrc
+	mybashrc_main
+}
 mybashrc_main(){
 	mybashrc_umask
 	mybashrc_path
@@ -19,13 +26,7 @@ mybashrc_umask(){
 	umask 002
 }
 mybashrc_path(){
-	PATH=$PATH:$HOME/bin
-	if [ -d $HOME/development-environment/vendor/plugin ]; then
-		for mybashrc_development_environment_plugin_path in $HOME/development-environment/vendor/plugin/*; do
-			PATH=$PATH:$mybashrc_development_environment_plugin_path
-		done
-	fi
-	export PATH=$PATH
+	export PATH=$PATH:$HOME/bin
 }
 mybashrc_history_options(){
 	export HISTCONTROL=ignoredups
@@ -228,16 +229,6 @@ mybashrc_window_title(){
 	fi
 }
 
-mybashrc(){
-	# If not running interactively, don't do anything
-	[ -z "$PS1" ] && return
-
-	mybashrc_load_file /etc/bashrc
-
-	mybashrc_load_file ~/.mybashrc
-
-	mybashrc_main
-}
 mybashrc_load_file(){
 	[ -f "$1" ] && . $1
 }
