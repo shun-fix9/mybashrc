@@ -62,7 +62,7 @@ mybashrc_alias(){
 	alias lA='ls -al'
 
 	alias grep='grep --color=auto'
-	alias s='git br && git st && git stash list'
+	alias s='git branch && git status && git stash list && [ -x $(git rev-parse --show-toplevel)/.git-status.sh ] && $(git rev-parse --show-toplevel)/.git-status.sh'
 
 	alias b='bundle exec'
 	alias p=connect-to-host
@@ -87,7 +87,7 @@ mybashrc_project_root_dir_list() {
 mybashrc_prompt_format(){
 	PROMPT_COLOR=32
 	WINDOW_TITLE=""
-	PS1='\[\033[${PROMPT_COLOR}m\][\u@\h.${WINDOW_TITLE} \W]\$\[\033[00m\] '
+	PS1='\[\e[${PROMPT_COLOR}m\][\u@\h.${WINDOW_TITLE} \W]\$\[\e[00m\] '
 }
 
 mybashrc_disable_change_window_title() {
