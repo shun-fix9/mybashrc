@@ -62,9 +62,7 @@ mybashrc_ruby(){
 	fi
 }
 mybashrc_direnv(){
-	if [ -n "$(which direnv)" ]; then
-		eval "$(direnv hook bash)"
-	fi
+	eval "$(direnv hook bash)"
 }
 mybashrc_lesspipe(){
 	[ -x /usr/bin/lesspipe ] && eval "$(lesspipe)"
