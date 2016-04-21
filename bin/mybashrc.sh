@@ -50,7 +50,7 @@ mybashrc_editor(){
 	export SVN_EDITOR=vim
 }
 mybashrc_rails_devel_name(){
-	export RAILS_DEVEL_NAME=sakai
+	export RAILS_DEVEL_NAME=$(basename $HOME)
 }
 mybashrc_completion(){
 	mybashrc_load_file /etc/bash_completion
