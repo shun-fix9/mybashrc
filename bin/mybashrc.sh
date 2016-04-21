@@ -10,8 +10,10 @@ mybashrc_main(){
 	mybashrc_path
 	mybashrc_history_options
 	mybashrc_editor
+	mybashrc_rails_devel_name
 	mybashrc_completion
 	mybashrc_ruby
+	mybashrc_direnv
 
 	mybashrc_checkwinsize
 	mybashrc_lesspipe
@@ -26,6 +28,14 @@ mybashrc_umask(){
 	umask 002
 }
 mybashrc_path(){
+	if [ -d $HOME/plugins ]; then
+		for plugins_path in $HOME/plugins/*/bin; do
+			if [ -d $plugins_path ]; then
+				PATH=$PATH:$plugins_path
+			fi
+		done
+	fi
+
 	export PATH=$PATH:$HOME/bin
 }
 mybashrc_history_options(){
@@ -39,6 +49,9 @@ mybashrc_editor(){
 	export EDITOR=vim
 	export SVN_EDITOR=vim
 }
+mybashrc_rails_devel_name(){
+	export RAILS_DEVEL_NAME=sakai
+}
 mybashrc_completion(){
 	mybashrc_load_file /etc/bash_completion
 }
@@ -46,6 +59,11 @@ mybashrc_ruby(){
 	if [ -d $HOME/.rbenv ]; then
 		export PATH="$HOME/.rbenv/bin:$PATH"
 		eval "$(rbenv init -)"
+	fi
+}
+mybashrc_direnv(){
+	if [ -n "$(which direnv)" ]; then
+		eval "$(direnv hook bash)"
 	fi
 }
 mybashrc_lesspipe(){
@@ -62,7 +80,7 @@ mybashrc_alias(){
 	alias lA='ls -al'
 
 	alias grep='grep --color=auto'
-	alias s='git all-status'
+	alias s="git status-verbose"
 
 	alias b='bundle exec'
 	alias p=connect-to-host
