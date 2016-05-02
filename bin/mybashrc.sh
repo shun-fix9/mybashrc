@@ -13,6 +13,7 @@ mybashrc_main(){
 	mybashrc_rails_devel_name
 	mybashrc_completion
 	mybashrc_ruby
+	mybashrc_doctrl
 
 	mybashrc_checkwinsize
 	mybashrc_lesspipe
@@ -59,6 +60,12 @@ mybashrc_ruby(){
 		export PATH="$HOME/.rbenv/bin:$PATH"
 		eval "$(rbenv init -)"
 	fi
+}
+mybashrc_doctrl(){
+	eval "$(cat /etc/docker-env | grep DOCTRL_ | sed 's/^/export /')"
+	export DOCKER_HOST=$DOCTRL_DOCKER_HOST
+	export DOCKER_API_VERSION=$DOCTRL_DOCKER_API_VERSION
+	export DOCTRL_EXEC_TO=$DOCTRL_EXEC_TO
 }
 mybashrc_lesspipe(){
 	[ -x /usr/bin/lesspipe ] && eval "$(lesspipe)"
