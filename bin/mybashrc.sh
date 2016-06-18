@@ -83,6 +83,7 @@ mybashrc_alias(){
 	alias grep='grep --color=auto'
 	alias s="git status-verbose"
 	alias a="git add -A"
+	alias c="git commit"
 
 	alias b='bundle exec'
 	alias p=connect-to-host
