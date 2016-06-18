@@ -81,11 +81,14 @@ mybashrc_alias(){
 	alias lA='ls -al'
 
 	alias grep='grep --color=auto'
-	alias s="git status-verbose"
-	alias a="git add -A"
-	alias c="git commit"
 
-	alias b='bundle exec'
+	alias s='git status-verbose'
+	alias a='git add -A'
+	alias c='git commit -m'
+	alias x='git checkout -b fix'
+	alias pub='git pub'
+	alias post='git post'
+
 	alias p=connect-to-host
 }
 mybashrc_prompt(){
