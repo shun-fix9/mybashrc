@@ -13,7 +13,7 @@ mybashrc_main(){
 	mybashrc_rails_devel_name
 	mybashrc_completion
 	mybashrc_ruby
-	mybashrc_doctrl
+	#mybashrc_doctrl
 
 	mybashrc_checkwinsize
 	mybashrc_lesspipe
