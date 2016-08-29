@@ -84,8 +84,8 @@ mybashrc_alias(){
 
 	alias s='git status-verbose'
 	alias a='git add -A'
-	alias c='git commit -m'
-	alias x='git checkout -b fix'
+	alias ci='git commit -m'
+	alias br='git checkout -b'
 	alias pub='git pub'
 	alias post='git post'
 
