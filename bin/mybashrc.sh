@@ -88,8 +88,6 @@ mybashrc_alias(){
 	alias br='git checkout -b'
 	alias pub='git pub'
 	alias post='git post'
-
-	alias p=connect-to-host
 }
 mybashrc_prompt(){
 	mybashrc_prompt_color_names
