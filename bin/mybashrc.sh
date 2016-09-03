@@ -72,9 +72,6 @@ mybashrc_docker(){
     if [ -n "$DOCKER_API_VERSION" ]; then
       export DOCKER_API_VERSION=$DOCKER_API_VERSION
     fi
-    if [ -n "$DOCKER_EXEC_TO" ]; then
-      export DOCKER_EXEC_TO=$DOCKER_EXEC_TO
-    fi
   fi
 }
 mybashrc_lesspipe(){
