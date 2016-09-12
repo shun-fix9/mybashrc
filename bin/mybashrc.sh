@@ -94,7 +94,7 @@ mybashrc_alias(){
   alias ci='git commit -m'
   alias br='git checkout -b'
   alias pub='git pub'
-  alias post='git post'
+  alias post='git pub && git post'
 }
 mybashrc_prompt(){
   mybashrc_prompt_color_names
